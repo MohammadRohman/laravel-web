@@ -12,6 +12,42 @@
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
     <link href="/assets/css/style.css" rel="stylesheet">
 
+    <!-- CSS -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #87CEEB;
+        }
+
+        .login-form {
+            background-color: #FFFFFF;
+            border-radius: 10px; 
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5); 
+            overflow: hidden; 
+        }
+
+        .login-input .form-group input[type="email"].form-control {
+            background-color: #f8f8f8; /* Light gray background for email input */
+        }
+
+        .login-form_btn {
+            background-color: #4CAF50; /* Green button color */
+            color: #fff; /* White text color */
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-form_btn:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+    <!-- CSS -->
+
 </head>
 
 <body class="h-100">
@@ -31,31 +67,35 @@
     ********************-->
 
 
-    <div class="login-form-bg h-100">
-        <div class="container h-100">
-            <div class="row justify-content-center h-100">
-                <div class="col-xl-6">
-                    <div class="form-input-content">
-                        <div class="card login-form mb-0">
-                            <div class="card-body pt-5">
-                                <a class="text-center" href="#"> <h4>Silahkan Login</h4></a>
-                                <form class="mt-5 mb-5 login-input" method="POST" action="/cek_login">
-                                    @csrf
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email" name="email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password" name="password" required>
-                                    </div>
-                                    <button type="submit" class="btn login-form__btn submit w-100">Sign In</button>
-                                </form>
-                            </div>
+<div class="login-form-bg h-100">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-xl-6">
+                <div class="form-input-content">
+                    <!-- CARD LOGIN -->
+                    <div class="card login-form mb-0" style="width: 400px; margin:0 auto;">  
+                        <div class="card-body">
+                            <a class="text-center" href="#"><h4>Silahkan Login</h4></a>
+                            <form class="mt-5 mb-5 login-input" method="POST" action="/cek_login">
+                                @csrf
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email" name="email" required 
+                                    style='border:1.7px solid #bcbcbc; border-radius:3px; padding-left:5px'>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password" name="password" required 
+                                    style='border:1.7px solid #bcbcbc; border-radius:3px; padding-left:5px'>
+                                </div>
+                                <button type="submit" class="btn login-form_btn submit w-100">Sign In</button>
+                            </form>
                         </div>
                     </div>
+                    <!-- CARD LOGIN -->
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <!--**********************************
         Scripts
